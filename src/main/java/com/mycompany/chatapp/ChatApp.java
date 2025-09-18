@@ -17,6 +17,9 @@ public class ChatApp {
      
       Scanner scanner = new Scanner(System.in);
 
+      //First name
+        System.out.println("Enter your firstname: ");
+        String firstname = scanner.nextLine();
         //username
         System.out.print("Enter username(max 5 characters, must contain an underscore): ");
         String username = scanner.nextLine();
@@ -49,7 +52,12 @@ public class ChatApp {
         
 
         //login
+         login login = new login( username, password, firstname);
+         System.out.println("Enter login username: ");
+         String enteredUsername = scanner.nextLine();
          
+         System.out.println("Enter login password");
+         String enteredPassword = scanner.nextLine();
          
     }
 }

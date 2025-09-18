@@ -9,11 +9,20 @@ package com.mycompany.chatapp;
  * @author RC_Student_lab
  */
 public class registration {
+    
     //username
+    // checks is there is an underscore(_) 
+    //and is no more than five char long
      public  boolean checkUsername(String username) { //validate username
        return username.contains("_")&& username.length()<=5;
-     }
+     }//end of checkUsername
+     
+     
     //password
+     //checks if it is at least 8 char long
+     // if it contains a capital letter
+     //if it contains a number
+     //if it contains a special char
     public boolean checkPasswordComplexity(String password){ //valiate password
         boolean hasUppercase = false;
         boolean hasNumber = false;
@@ -34,10 +43,15 @@ public class registration {
              }
             }
         return hasUppercase && hasNumber && hasSpecialChar;
-    }
+    }//end of checkPasswordComplexity
     
-
+    //Cellphone Number
+   //checks if the cellphone number contains the international country code
+    //then the number with no more than 10 char long
     public boolean checkCellPhoneNumber(String cellphone){
-        return cellphone.startsWith("+27") && cellphone.length() == 12;
-    }
-}
+        return cellphone.contains("+27") && cellphone.length() == 12;
+    }//end of checkCellPhoneNumber
+    
+    
+    
+} // end of class
