@@ -9,5 +9,11 @@ package com.mycompany.chatapp;
  * @author RC_Student_lab
  */
 public class login {
+    private String enteredUsername;
+    private String enteredPassword;
     
+    public login(String username, String password){
+        this.enteredUsername = username;
+        this.enteredPassword = password;
+    }
 }

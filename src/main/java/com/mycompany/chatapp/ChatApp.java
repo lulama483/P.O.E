@@ -14,7 +14,7 @@ public class ChatApp {
 
     public static void main(String[] args) {
          registration keys = new registration();
-      login obj = new login();
+     
       Scanner scanner = new Scanner(System.in);
 
         //username
@@ -37,6 +37,7 @@ public class ChatApp {
 
          }
         
+        //cell phone number
         System.out.print("Enter South African cell phone number (format: +27xxxxxxxxx or 27xxxxxxxxx or 0xxxxxxxxx): ");
         String cellphone = scanner.nextLine();
         
@@ -45,8 +46,11 @@ public class ChatApp {
         }else{
             System.out.println("Celphone number incorrectly formatted or does not contain international code.");
         }
-        System.out.println("hi");
-        System.out.println("hey");
+        
 
+        //login
+         login obj = new login();
+         
+         
     }
 }
