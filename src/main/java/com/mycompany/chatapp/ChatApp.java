@@ -38,7 +38,7 @@ public class ChatApp {
          }
         
         //cell phone number
-        System.out.print("Enter South African cell phone number (format: +27xxxxxxxxx or 27xxxxxxxxx or 0xxxxxxxxx): ");
+        System.out.print("Enter South African cell phone number (format: +27xxxxxxxxx ): ");
         String cellphone = scanner.nextLine();
         
         if(keys.checkPhoneNumber(cellphone)){
@@ -49,7 +49,6 @@ public class ChatApp {
         
 
         //login
-         login obj = new login();
          
          
     }

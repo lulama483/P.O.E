@@ -38,6 +38,6 @@ public class registration {
     
 
     public boolean checkPhoneNumber(String cellphone){
-        return cellphone.startsWith("+27") && cellphone.length() == 11;
+        return cellphone.startsWith("+27") && cellphone.length() == 12;
     }
 }
