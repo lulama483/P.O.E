@@ -25,13 +25,15 @@ public class login {
     
     //display the messege for login success
     public String returnLoginStatus(String username, String password, String firstname){
-        if(loginUser(username, password, firstname)){
-             return "Heyy Welcome" + firstname + " it is great to see you again pookie.";
+        if (loginUser(username, password, firstname)) {
+           
+              return "Heyy Welcome " + firstname + " it is great to see you again pookie.";
         } else{
-            return "Username or password is incorrect, please try again.";
+           return "Username or password is incorrect, please try again.";
         }
            
     
     }
     
-}
+    }
+
