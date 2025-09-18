@@ -10,11 +10,11 @@ package com.mycompany.chatapp;
  */
 public class registration {
     //username
-     public  boolean validateUsername(String username) { //validate username
+     public  boolean checkUsername(String username) { //validate username
        return username.contains("_")&& username.length()<=5;
      }
     //password
-    public boolean validatePassword(String password){ //valiate password
+    public boolean checkPasswordComplexity(String password){ //valiate password
         boolean hasUppercase = false;
         boolean hasNumber = false;
         boolean hasSpecialChar = false;
@@ -37,7 +37,7 @@ public class registration {
     }
     
 
-    public boolean checkPhoneNumber(String cellphone){
+    public boolean checkCellPhoneNumber(String cellphone){
         return cellphone.startsWith("+27") && cellphone.length() == 12;
     }
 }

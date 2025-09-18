@@ -20,7 +20,7 @@ public class ChatApp {
         //username
         System.out.print("Enter username(max 5 characters, must contain an underscore): ");
         String username = scanner.nextLine();
-        if(keys.validateUsername(username)){
+        if(keys.checkUsername(username)){
             System.out.println("Username successfully captured.");
         }else{
              System.out.println("Username is not correctly formatted; please ensure that your username contains an underscore and is no more than five characters in length.");
@@ -30,7 +30,7 @@ public class ChatApp {
         System.out.print("Enter password (min 8 characters, at least one capital letter, one number, and one special character): ");
         String password = scanner.nextLine();
 
-        if(keys.validatePassword(password)){
+        if(keys.checkPasswordComplexity(password)){
             System.out.println("Password successfuly captured");
         } else{
             System.out.println("Password is not correctly foormatted; please ensure that password contains atleast eight characters, a capital letter, a number and  a special character.");
@@ -41,7 +41,7 @@ public class ChatApp {
         System.out.print("Enter South African cell phone number (format: +27xxxxxxxxx ): ");
         String cellphone = scanner.nextLine();
         
-        if(keys.checkPhoneNumber(cellphone)){
+        if(keys.checkCellPhoneNumber(cellphone)){
             System.out.println("Cellphone Number successfully added");
         }else{
             System.out.println("Celphone number incorrectly formatted or does not contain international code.");

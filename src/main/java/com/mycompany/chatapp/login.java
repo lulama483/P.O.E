@@ -16,4 +16,10 @@ public class login {
         this.enteredUsername = username;
         this.enteredPassword = password;
     }
+    public Boolean loginUser(String username, String password){
+        return this.enteredPassword.equals(password) && this.enteredUsername.equals(username); // will return whether true or false
+                
+    }
+    
+    //display the messege for login success
 }
