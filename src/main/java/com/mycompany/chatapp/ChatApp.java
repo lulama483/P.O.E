@@ -70,7 +70,7 @@ public class ChatApp {
         String isLogin;
         
         do{
-         login login = new login( username, password, firstname);
+        login login = new login( username, password, firstname);
          System.out.println("Enter login username: ");
          String enteredUsername = scanner.nextLine();
          scanner.next();

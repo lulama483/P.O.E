@@ -17,10 +17,10 @@ public class login {
     public login(String username, String password, String firstname){
         this.Username = username;
         this.Password = password;
-        this.Firstname = firstname;
+       this.Firstname = firstname;
     }
     public Boolean loginUser(String enteredUsername, String enteredPassword, String firstname){
-        return this.Password.equals(enteredPassword) && this.Username.equals(enteredUsername)&& this.Firstname.equals(firstname); // will return whether true or false
+        return this.Password.equals(enteredPassword) && this.Username.equals(enteredUsername) && this.Firstname.equals(firstname); // will return whether true or false
                 
     }
     
