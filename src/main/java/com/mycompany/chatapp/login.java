@@ -9,22 +9,24 @@ package com.mycompany.chatapp;
  * @author RC_Student_lab
  */
 public class login {
-    private String enteredUsername;
-    private String enteredPassword;
+    //declaring our username , password and firstname
+    private String Username;
+    private String Password;
     private String Firstname;
     
     public login(String username, String password, String firstname){
-        this.enteredUsername = username;
-        this.enteredPassword = password;
+        this.Username = username;
+        this.Password = password;
         this.Firstname = firstname;
     }
-    public Boolean loginUser(String username, String password, String firstname){
-        return this.enteredPassword.equals(password) && this.enteredUsername.equals(username)&& this.Firstname.equals(firstname); // will return whether true or false
+    public Boolean loginUser(String enteredUsername, String enteredPassword, String firstname){
+        return this.Password.equals(enteredPassword) && this.Username.equals(enteredUsername)&& this.Firstname.equals(firstname); // will return whether true or false
                 
     }
     
     //display the messege for login success
     public String returnLoginStatus(String username, String password, String firstname){
+        
         if (loginUser(username, password, firstname)) {
            
               return "Heyy Welcome " + firstname + " it is great to see you again pookie.";

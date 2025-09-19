@@ -12,18 +12,23 @@ import java.util.Scanner;
  */
 public class ChatApp {
 
+  
     public static void main(String[] args) {
          registration keys = new registration();
      
       Scanner scanner = new Scanner(System.in);
 
+      String firstname;
       String username;
       String password;
       String cellphone;
       
+      
       //First name
-        System.out.println("Enter your firstname: ");
-        String firstname = scanner.nextLine();
+        System.out.println("Enter your firstname and Surname: ");
+        firstname = scanner.nextLine();
+        
+        do{
         //username
         System.out.print("Enter username(max 5 characters, must contain an underscore): ");
          username = scanner.nextLine();
@@ -32,12 +37,12 @@ public class ChatApp {
         }else{
              System.out.println("Username is not correctly formatted; please ensure that your username contains an underscore and is no more than five characters in length.");
         }
-        
+        }while(!keys.checkUsername(username));
 
         do{
         //passsword
         System.out.print("Enter password (min 8 characters, at least one capital letter, one number, and one special character): ");
-         password = scanner.next();
+        password = scanner.next();
 
         if(keys.checkPasswordComplexity(password)){
             System.out.println("Password successfuly captured");
@@ -45,7 +50,9 @@ public class ChatApp {
             System.out.println("Password is not correctly foormatted; please ensure that password contains atleast eight characters, a capital letter, a number and  a special character.");
 
          }
+        }while(!keys.checkPasswordComplexity(password));
         
+        do{
         //cell phone number
         System.out.print("Enter South African cell phone number (format: +27xxxxxxxxx ): ");
         cellphone = scanner.next();
@@ -53,11 +60,16 @@ public class ChatApp {
         if(keys.checkCellPhoneNumber(cellphone)){
             System.out.println("Cellphone Number successfully added");
         }else{
-            System.out.println("Celphone number incorrectly formatted or does not contain international code.");
+            System.out.println("Cellphone number incorrectly formatted or does not contain international code.");
         }
-        } while(!keys.checkPasswordComplexity(password) || !keys.checkUsername(username)|| !keys.checkCellPhoneNumber(cellphone));
+        } while(!keys.checkCellPhoneNumber(cellphone));
+       
 
+             
         //login
+        String isLogin;
+        
+        do{
          login login = new login( username, password, firstname);
          System.out.println("Enter login username: ");
          String enteredUsername = scanner.nextLine();
@@ -68,9 +80,21 @@ public class ChatApp {
          scanner.next();
          
          // the login result message  
-         System.out.println(login.returnLoginStatus(username, password, firstname));
+          isLogin = login.returnLoginStatus(username, password, firstname);
+         
+         
+          if (isLogin.equals("success")){
+           
+              System.out.println("Heyy Welcome " + firstname + " it is great to see you again pookie.");
+              
+        } else{
+              System.out.println("Username or password is incorrect, please try again.");
+           
+        }
+         } while(isLogin.equals("success"));
          
         scanner.close();
     }
-      
 }
+      
+
