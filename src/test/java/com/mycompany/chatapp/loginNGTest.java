@@ -23,13 +23,13 @@ public class loginNGTest {
      */
     @Test
     public void testLoginUser() {
-        Assert.assertTrue(user.loginUser("Kyl_1", "Ch&&sec@ke99!", "Kyle gyen"));
+        assertTrue(user.loginUser("Kyl_1", "Ch&&sec@ke99!"));
         
     }
     
     @Test
     public void testUnsuccessfulLogin(){
-        Assert.assertFalse(user.loginUser("Kyle!!!!!!", "password","Kyle99865"));
+        assertFalse(user.loginUser("Kyle!!!!!!", "password"));
     }
 }
 

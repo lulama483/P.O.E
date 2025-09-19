@@ -69,29 +69,29 @@ public class ChatApp {
         //login
         String isLogin;
         
-        do{
+        
         login login = new login( username, password, firstname);
          System.out.println("Enter login username: ");
-         String enteredUsername = scanner.nextLine();
+         String enteredUsername = scanner.nextLine().trim();
          scanner.next();
+        
          
          System.out.println("Enter login password");
-         String enteredPassword = scanner.nextLine();
+         String enteredPassword = scanner.nextLine().trim();
          scanner.next();
-         
+                 
          // the login result message  
-          isLogin = login.returnLoginStatus(username, password, firstname);
+        Boolean success =  login.loginUser(enteredUsername, enteredPassword);
          
          
-          if (isLogin.equals("success")){
-           
-              System.out.println("Heyy Welcome " + firstname + " it is great to see you again pookie.");
-              
-        } else{
+          if (success){
               System.out.println("Username or password is incorrect, please try again.");
-           
+           isLogin = "failure";
+            } else{
+            System.out.println("Heyy Welcome " + firstname + " it is great to see you again pookie.");
+              isLogin ="success";
         }
-         } while(isLogin.equals("success"));
+         
          
         scanner.close();
     }

@@ -19,17 +19,17 @@ public class login {
         this.Password = password;
        this.Firstname = firstname;
     }
-    public Boolean loginUser(String enteredUsername, String enteredPassword, String firstname){
-        return this.Password.equals(enteredPassword) && this.Username.equals(enteredUsername) && this.Firstname.equals(firstname); // will return whether true or false
+    public Boolean loginUser(String enteredUsername, String enteredPassword){
+        return this.Password.equals(enteredPassword) && this.Username.equals(enteredUsername) ; // will return whether true or false
                 
     }
     
     //display the messege for login success
-    public String returnLoginStatus(String username, String password, String firstname){
+    public String returnLoginStatus(String enteredUsername, String enteredPassword, String enteredFirstname){
         
-        if (loginUser(username, password, firstname)) {
+        if (enteredUsername.equals(Username)&& enteredPassword.equals(Password)){
            
-              return "Heyy Welcome " + firstname + " it is great to see you again pookie.";
+              return "Heyy Welcome " + Firstname + " it is great to see you again pookie.";
         } else{
            return "Username or password is incorrect, please try again.";
         }
